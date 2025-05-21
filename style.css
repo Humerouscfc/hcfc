@@ -1,0 +1,111 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #4A90E2; /* A nice blue */
+}
+
+/* Calendar table styles */
+table {
+    width: 100%;
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    height: 60px; /* Fixed height for cells */
+}
+
+/* Table header (days of the week) styles */
+th {
+    background-color: #4A90E2;
+    color: white;
+    font-weight: bold;
+}
+
+/* Table cells (days) styles */
+td {
+    background-color: #fff;
+    vertical-align: top; /* Align day numbers to the top */
+    font-size: 0.9em;
+}
+
+td:hover {
+    background-color: #eef; /* Light blue hover effect */
+    cursor: pointer;
+}
+
+/* Placeholder for current day styling */
+.current-day {
+    background-color: #FFD700; /* Gold */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Placeholder for selected day styling */
+.selected-day {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3) inset;
+}
+
+/* Styles for empty cells (before/after month days) */
+td.empty {
+    background-color: #f7f7f7;
+    pointer-events: none; /* Make them unclickable */
+}
+
+/* Styles for event days */
+td.event-day {
+    background-color: #ffebcc; /* Light orange to indicate an event */
+    position: relative; /* For potential pseudo-elements like dots */
+}
+
+td.event-day::after { /* Optional: adds a small dot */
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #ff9800; /* Orange dot */
+    border-radius: 50%;
+}
+
+/* Styles for the event details display area */
+#event-details-display {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-height: 50px; /* Ensure it's visible even when empty */
+    text-align: center;
+    color: #333;
+}
+
+#event-details-display p {
+    margin: 0;
+    font-style: italic;
+    color: #777;
+}

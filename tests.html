@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Application Tests</title>
+    <!-- Link to production stylesheet to ensure styles are applied for visual inspection if needed,
+         and to ensure classes like .current-day, .event-day are effective -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styles for test results */
+        #test-results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        #test-results ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        #test-results li {
+            padding: 5px;
+            border-bottom: 1px dotted #eee;
+        }
+        #test-results li:last-child {
+            border-bottom: none;
+        }
+        body.testing {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body class="testing">
+
+    <h1>Calendar Application Test Page</h1>
+    <p>
+        <strong>How to Run Tests:</strong> Simply open this `tests.html` file in a web browser.
+        The tests will run automatically. Results will be displayed below and in the browser's developer console.
+    </p>
+    <p>
+        The calendar component below is used by the tests. Interactions may occur rapidly.
+    </p>
+
+    <hr>
+
+    <!-- Minimal Calendar HTML structure (mirroring index.html) -->
+    <header>
+        <button id="prev-month-btn">Previous</button>
+        <h1 id="month-year-header">Month Year</h1>
+        <button id="next-month-btn">Next</button>
+    </header>
+    <main>
+        <table id="calendar-table">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- Calendar days will be populated by JavaScript -->
+            </tbody>
+        </table>
+        <div id="event-details-display">
+            <p>Click on an event day to see details here.</p>
+        </div>
+    </main>
+
+    <hr>
+
+    <!-- Test Results Area -->
+    <div id="test-results">
+        <p>Running tests...</p>
+    </div>
+
+    <!-- Scripts: Order is important -->
+    <!-- 1. Test helpers -->
+    <script src="test-helpers.js"></script>
+    <!-- 2. The application script to be tested -->
+    <script src="script.js"></script>
+    <!-- 3. The test cases -->
+    <script src="calendar-tests.js"></script>
+
+</body>
+</html>
